@@ -3,8 +3,9 @@
   --medium-color: rgb(64, 78, 121);
   --main-color: rgb(230, 232, 230);
   --accent-color: rgb(218, 69, 69);
+  --accent-active: rgb(187, 51, 51);
   --text-on-dark: rgb(255, 255, 255);
-  --shadow-color: rgba(89, 89, 95, 0.459);
+  --shadow-color: rgba(155, 155, 175, 0.459);
   --padding-regular: 20px;
   --border-radius-regular: 15px;
   --gap-regular: 25px;
@@ -24,11 +25,6 @@ body {
   grid-template-rows: 1fr 4fr;
 }
 
-.main {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  background-color: var(--main-color);
-}
 /*SIDE BAR*/
 .sidebar {
   grid-column: 1 / 2;
@@ -57,6 +53,7 @@ body {
   gap: var(--gap-small);
   width: 100%;
   padding-left: 1em;
+  transition: all 0.2s ease;
 }
 .btn > h3:hover {
   text-decoration: underline var(--text-on-dark) 2px;
@@ -86,6 +83,7 @@ body {
   background-color: var(--text-on-dark);
   display: grid;
   grid-template-rows: 70px 100px;
+  box-shadow: 0 4px 2px 2px black;
 }
 .upper-panel {
   grid-row: 1/2;
@@ -119,7 +117,8 @@ body {
   margin-left: 1em;
   height: 30px;
   width: 600px;
-  border: var(--shadow-color) 2px solid;
+  border: none;
+  background-color: var(--shadow-color);
   padding: 10px;
   border-radius: var(--border-radius-regular);
 }
@@ -149,9 +148,17 @@ body {
   width: 100px;
   color: var(--text-on-dark);
   background-color: var(--accent-color);
+  cursor: pointer;
   font-size: 1em;
   border: none;
   border-radius: var(--border-radius-regular);
+  transition: transform 0.2s ease-in-out;
+}
+.right-panel-btn:hover {
+  transform: scale(1.05);
+}
+.right-panel-btn:active {
+  background-color: var(--accent-active);
 }
 .text > h1 {
   line-height: 0px;
@@ -159,4 +166,31 @@ body {
 i {
   color: var(--text-on-dark);
   font-size: 1.4em;
+}
+/*MAIN CONTENT*/
+.main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: var(--main-color);
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  grid-template-rows: 1fr 250px;
+  padding: var(--padding-regular);
+  gap: var(--gap-regular);
+}
+.main > div {
+  border-radius: var(--border-radius-regular);
+  background-color: var(--text-on-dark);
+}
+.content-card {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+.announcement {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.trending {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
