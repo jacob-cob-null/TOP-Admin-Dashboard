@@ -175,7 +175,7 @@ i {
   grid-row: 2 / 3;
   background-color: var(--main-color);
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: 1fr 400px;
   grid-template-rows: 270px 400px;
   padding: var(--padding-regular);
   gap: var(--gap-regular);
@@ -195,6 +195,7 @@ i {
   gap: var(--gap-regular);
   align-items: center;
   justify-content: center;
+  background-color: var(--main-color);
 }
 .Projects-heading {
   position: absolute;
@@ -210,6 +211,7 @@ i {
   border: 2px var(--shadow-color) solid;
   border-left: 8px var(--accent-color) solid;
   border-radius: var(--border-radius-regular);
+  background-color: var(--text-on-dark);
 }
 .top {
   margin-top: 2em;
@@ -249,7 +251,31 @@ i {
   white-space: normal;
   overflow-y: auto; /* Enables scrolling if content overflows */
 }
+
+/*TREND*/
+
 .trending {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-regular);
+  gap: var(--gap-small);
+}
+.trend {
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+}
+.trend > img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+.trend-text > p {
+  line-height: 1px;
+}
+.trend-text {
+  margin-right: 2em;
 }
